@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    app:
+        #Where is the docker file.
+        build: .
+        #Command to execute at ap start.
+        command: npm start
+        #Redirect port from docker to localhost.
+        ports:
+            - "3000:3000"
+        #Folder that mirrors changes. From docker to this folder.
+        volumes:
+            - .:/usr/app
